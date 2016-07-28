@@ -1,6 +1,15 @@
+// clicking submit in html page
+// triggers this fxn (entire script)
+document.getElementById("userWord")
+    .addEventListener("keydown", function(event) {
+      
+    if (event.keyCode == 13){
+      var userWord = document.getElementById("userWord").value;
+      console.log("enter pressed");
+      console.log("you made it this far");
+      checkMatch(userWord, States);
+    }
+});
 
-
-var userWord = document.getElementById('form1').elements["userWord"].value;
-
-console.log(userWord);
-document.write(userWord);
+//console.log("you made it this far");
+//checkMatch(userWord, States);

@@ -50,3 +50,5 @@ var States = [
   'Wisconsin',
   'Wyoming'
 ];
+
+var newStates = States;

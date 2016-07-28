@@ -7,18 +7,15 @@
 </head>
 <body>
 
-  <form id="form1">
-  Enter Word: <input name="userWord" type="text" size="30">
-  </form>
-  <button onclick="getUserInput()">Submit</button>
+  <p>
+  Enter Word:
+  <input id="userWord" type="text" size="30" placeholder="Enter a State">
+  </p>
 
-  <script type="text/javascript">
-  function getUserInput(){
-    userWord = document.getElementById('form1').elements["userWord"].value;
-    checkMatch(userWord, States);
-  }
 
+  <script src="src/indexPractice.js">
   </script>
+
   <p id="form2"></p>
 
 
