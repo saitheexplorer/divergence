@@ -2,10 +2,25 @@
 <html>
 <head>
   <title>DIVERGENCE</title>
+  <script src="src/divergenceFunctions.js"></script>
+  <script src="src/states.js"></script>
 </head>
 <body>
-  Enter word:
-  <input type="text" name="userWord">
-  <script src="src/indexPractice.js"></script>
+
+  <form id="form1">
+  Enter Word: <input name="userWord" type="text" size="30">
+  </form>
+  <button onclick="getUserInput()">Submit</button>
+
+  <script type="text/javascript">
+  function getUserInput(){
+    userWord = document.getElementById('form1').elements["userWord"].value;
+    checkMatch(userWord, States);
+  }
+
+  </script>
+  <p id="form2"></p>
+
+
 </body>
 </html>
