@@ -1,1 +1,8 @@
-console.log('Hello, world!');
+var cities = [
+  'Dallas',
+  'Austin',
+  'Houston',
+  'San Antonio'
+];
+
+console.log(cities);
