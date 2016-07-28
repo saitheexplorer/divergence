@@ -5,4 +5,10 @@ var cities = [
   'San Antonio'
 ];
 
-console.log(cities);
+function checkCity(city) {
+  if (cities.indexOf(city) > -1) {
+    console.log('Answer OK');
+  } else {
+    console.log('Answer not OK');
+  }
+}
