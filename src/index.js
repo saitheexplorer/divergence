@@ -8,24 +8,24 @@ var cities = [
 var guessedCities = [];
 
 function checkCity(city) {
-  if (typeof city !== 'string') return false;
+  if (typeof city !== 'string') return {status: false, message: 'Answer not a string.'};
 
   city = city.toLowerCase();
 
-  if (cities.indexOf(city) === -1) return false;
-  if (guessedCities.indexOf(city) !== -1) return false;
+  if (cities.indexOf(city) === -1) return {status: false, message: 'City not in list'};
+  if (guessedCities.indexOf(city) !== -1) return {status: false, message: 'City already guessed'};
 
-  return true;
+  return {status: true};
 }
 
 function guessCity(city) {
-  if (!checkCity(city)) {
-    console.log('Bad answer - already guessed or not in list.');
-  } else {
-    guessedCities.push(city.toLowerCase());
+  var checkGuess = checkCity(city);
 
-    console.log('Good answer! Guess again.');
-  }
+  if (!checkGuess) return alert(checkGuess.message);
+
+  guessedCities.push(city.toLowerCase());
+
+  alert('Good answer! Guess again.');
 }
 
 
