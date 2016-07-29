@@ -21,7 +21,7 @@ function checkCity(city) {
 function guessCity(city) {
   var checkGuess = checkCity(city);
 
-  if (!checkGuess) return alert(checkGuess.message);
+  if (!checkGuess.status) return alert(checkGuess.message);
 
   guessedCities.push(city.toLowerCase());
 
