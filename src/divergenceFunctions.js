@@ -1,6 +1,7 @@
 
 
 function checkMatch(userWord, wordBank){
+  userWord = userWord.toLowerCase();
   if(wordBank.indexOf(userWord) > -1) {
     document.getElementById('form2').innerHTML ="Nice Job! " + userWord + " is in the word bank";
     console.log("Answer is valid");
