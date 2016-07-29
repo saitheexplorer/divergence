@@ -28,4 +28,11 @@ function guessCity(city) {
   alert('Good answer! Guess again.');
 }
 
+$(document).ready(function () {
+  $('#submit').on('click', function () {
+    var guess = $('#user-word').val();
+
+    guessCity(guess);
+  });
+});
 
