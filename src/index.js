@@ -5,25 +5,25 @@ var cities = [
   'san antonio'
 ];
 
-var guessedCities = [];
+var guesses = [];
 
-function checkCity(city) {
-  if (typeof city !== 'string') return {status: false, message: 'Answer not a string.'};
+function checkAnswer(bank, answer) {
+  if (typeof answer !== 'string') return {status: false, message: 'Answer not a string.'};
 
-  city = city.toLowerCase();
+  answer = answer.toLowerCase();
 
-  if (cities.indexOf(city) === -1) return {status: false, message: 'City not in list'};
-  if (guessedCities.indexOf(city) !== -1) return {status: false, message: 'City already guessed'};
+  if (bank.indexOf(answer) === -1) return {status: false, message: 'Answer not in list.'};
+  if (guesses.indexOf(answer) !== -1) return {status: false, message: 'Answer already guessed.'};
 
   return {status: true};
 }
 
-function guessCity(city) {
-  var checkGuess = checkCity(city);
+function makeGuess(guess) {
+  var checkGuess = checkAnswer(cities, guess);
 
   if (!checkGuess.status) return alert(checkGuess.message);
 
-  guessedCities.push(city.toLowerCase());
+  guesses.push(guess.toLowerCase());
 
   alert('Good answer! Guess again.');
 }
@@ -32,7 +32,7 @@ $(document).ready(function () {
   $('#submit').on('click', function () {
     var guess = $('#user-word').val();
 
-    guessCity(guess);
+    makeGuess(guess);
   });
 });
 
