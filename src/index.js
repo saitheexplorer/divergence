@@ -1,14 +1,31 @@
 var cities = [
-  'Dallas',
-  'Austin',
-  'Houston',
-  'San Antonio'
+  'dallas',
+  'austin',
+  'houston',
+  'san antonio'
 ];
 
+var guessedCities = [];
+
 function checkCity(city) {
-  if (cities.indexOf(city) > -1) {
-    console.log('Answer OK');
+  if (typeof city !== 'string') return false;
+
+  city = city.toLowerCase();
+
+  if (cities.indexOf(city) === -1) return false;
+  if (guessedCities.indexOf(city) !== -1) return false;
+
+  return true;
+}
+
+function guessCity(city) {
+  if (!checkCity(city)) {
+    console.log('Bad answer - already guessed or not in list.');
   } else {
-    console.log('Answer not OK');
+    guessedCities.push(city.toLowerCase());
+
+    console.log('Good answer! Guess again.');
   }
 }
+
+
