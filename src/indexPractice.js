@@ -8,5 +8,7 @@ document.getElementById("userWord")
       var userWord = document.getElementById("userWord").value;
       console.log("User has submitted Answer");
       checkAnswer(userWord, states);
+      document.getElementById("userWord").value = null;
     }
+
 });

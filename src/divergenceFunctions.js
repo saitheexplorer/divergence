@@ -2,6 +2,7 @@
 var updatedWordBank = [];
 
 function checkMatch(userWord, wordBank){
+  console.log(updatedWordBank);
   userWord = userWord.toLowerCase();
   // if arguments are entered incorrectly display errors in console
   if (!userWord || !wordBank){
@@ -19,7 +20,6 @@ function checkMatch(userWord, wordBank){
   return {status: 1, message: "Great Guess Guh! Go Guess 'Gain"};
     console.log("Answer is valid");
     return 0;
-
 }
 
 function updateBank(userWord){
@@ -30,13 +30,19 @@ function checkAnswer(userWord, wordBank){
   var isAnswerGood = checkMatch(userWord, wordBank);
   var message = isAnswerGood.message;
 
-  if(isAnswerGood.status) { message = message.fontcolor("green"); }
-  else { message = message.fontcolor("red"); }
+  if(isAnswerGood.status) {
+    message = message.fontcolor("green");
+    updateBank(userWord.toLowerCase());
+   }
+  else {
+    message = message.fontcolor("red");
+  }
   document.getElementById("form2").innerHTML = message;
 
-  if (!isAnswerGood.status) return 0;
 
-  updateBank(userWord.toLowerCase());
+  if (!isAnswerGood.status) return 0;
+  else return 1;
+
 
 }
 
