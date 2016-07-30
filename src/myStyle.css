@@ -1,0 +1,31 @@
+
+body {
+  background-image: url("background_Image.jpg");
+}
+
+h2 {
+  color: white;
+  position: absolute;
+  top:175px;
+  left: 120px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+#userWord {
+  position: absolute;
+  top:200px;
+  left:300px;
+  font-size:14pt;
+  height:18px;
+  width:200px;
+
+}
+
+#form2 {
+  position:absolute;
+  top:220px;
+  left:175px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
